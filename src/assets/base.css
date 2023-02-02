@@ -1,13 +1,24 @@
 /* color palette */
 :root {
-  --gs-black: #212121;
-  --gs-white-1: #FFFFFF;
-  --gs-white-2: #F9F9F9;
-  --gs-green-1: #3B755F;
-  --gs-green-2: #AFC6BD;
-  --gs-gray: #B0B0B0;
-  --gs-beige: #F2EBDB;
-  --gs-blue: #2E3A8C;
+  --gs-black-base: 33, 33, 33;
+  --gs-white-1-base: 255, 255, 255;
+  --gs-white-2-base: 249, 249, 249;
+  --gs-green-1-base: 59, 117, 95;
+  --gs-green-2-base: 175, 198, 189;
+  --gs-green-3-base: 104, 115, 111;
+  --gs-gray-base: 176, 176, 176;
+  --gs-beige-base: 242, 235, 219;
+  --gs-blue-base: 46, 58, 140;
+
+  --gs-black: rgb(var(--gs-black-base));
+  --gs-white-1: rgb(var(--gs-white-1-base));
+  --gs-white-2: rgb(var(--gs-white-2-base));
+  --gs-green-1: rgb(var(--gs-green-1-base));
+  --gs-green-2: rgb(var(--gs-green-2-base));
+  --gs-green-3: rgb(var(--gs-green-3-base));
+  --gs-gray: rgb(var(--gs-gray-base));
+  --gs-beige: rgb(var(--gs-beige-base));
+  --gs-blue: rgb(var(--gs-blue-base));
 }
 
 /* semantic color variables for this project */
@@ -34,6 +45,7 @@
   --color-border-grey: var(--gs-gray);
   --color-border-beige: var(--gs-beige);
   --color-border-green: var(--gs-green-2);
+  --color-border-green-2: var(--gs-green-3);
   --color-border-black: var(--gs-black);
 
   --color-checkbox: var(--gs-white-2);

@@ -3,11 +3,11 @@ import type { Widget } from "@/models/widget";
 import { ImpactTypes } from "@/models/widget";
 import GreenSparkIcon from "@/components/icons/IconGreenSpark.vue";
 
-interface BadgeProps {
-  widget: Widget
+export interface BadgeProps {
+  widget: Widget;
 }
 
-const { widget } = defineProps<BadgeProps>();
+const props = defineProps<BadgeProps>();
 
 const getFormattedImpact = (widget: Widget) => {
   if (widget.type === ImpactTypes.CARBON) {
@@ -16,20 +16,19 @@ const getFormattedImpact = (widget: Widget) => {
 
   return `${widget.amount} ${widget.type}`;
 };
-
 </script>
 
 <template>
-<div class="badge" :badge-color="widget.selectedColor">
-  <div class="gs-avatar">
-  <GreenSparkIcon class="gs-icon" />
-    <p class="gs-text">greenspark</p>
+  <div class="badge" :badge-color="props.widget.selectedColor">
+    <div class="gs-avatar">
+      <GreenSparkIcon class="gs-icon" />
+      <p class="gs-text">greenspark</p>
+    </div>
+    <div class="info">
+      <p class="action">This product {{ props.widget.action }}</p>
+      <p class="impact-type">{{ getFormattedImpact(props.widget) }}</p>
+    </div>
   </div>
-  <div class="info">
-    <p class="action">This product {{widget.action}}</p>
-    <p class="impact-type">{{getFormattedImpact(widget)}}</p>
-  </div>
-</div>
 </template>
 
 <style scoped>
@@ -107,5 +106,4 @@ const getFormattedImpact = (widget: Widget) => {
   line-height: 22px;
   font-style: normal;
 }
-
 </style>

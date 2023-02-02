@@ -1,19 +1,27 @@
 export const ImpactTypes = {
-    CARBON: 'carbon',
-    PLASTIC_BOTTLES: 'plastic bottles',
-    TREES: 'trees',
+  CARBON: "carbon",
+  PLASTIC_BOTTLES: "plastic bottles",
+  TREES: "trees",
 };
 
-type WidgetAction = 'collects' | 'plants' | 'offsets';
+export const WidgetColors = [
+  "blue",
+  "green",
+  "beige",
+  "white",
+  "black",
+] as const;
 
-type WidgetColor = 'white' | 'black' | 'blue' | 'green' | 'beige';
+export type WidgetColorType = (typeof WidgetColors)[number];
+
+export type WidgetAction = "collects" | "plants" | "offsets";
 
 export interface Widget {
-    id: number,
-    type: keyof typeof ImpactTypes,
-    amount: number,
-    action: WidgetAction,
-    active: boolean,
-    linked: boolean,
-    selectedColor: WidgetColor
+  id: number;
+  type: keyof typeof ImpactTypes;
+  amount: number;
+  action: WidgetAction;
+  active: boolean;
+  linked: boolean;
+  selectedColor: WidgetColorType;
 }
