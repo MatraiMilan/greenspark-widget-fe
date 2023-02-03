@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-const linkUrl = ref("https://www.getgreenspark.com/");
+import config from "../config/config";
 </script>
 <template>
   <div class="info-card elevated">
@@ -10,9 +8,9 @@ const linkUrl = ref("https://www.getgreenspark.com/");
       share your impact with your customers. Turn it off here if you do not want
       the badge to link to it.
     </div>
-    <a class="profile-link" :href="linkUrl" target="_blank"
-      >View Public Profile</a
-    >
+    <a class="profile-link" :href="config.publicProfileUrl" target="_blank">
+      View Public Profile
+    </a>
   </div>
 </template>
 

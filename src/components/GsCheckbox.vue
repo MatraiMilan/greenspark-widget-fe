@@ -2,7 +2,7 @@
 import IconCheckMark from "@/components/icons/IconCheckMark.vue";
 
 export interface CheckboxProps {
-  checked?: Boolean;
+  checked: Boolean;
 }
 
 export interface CheckboxEmits {

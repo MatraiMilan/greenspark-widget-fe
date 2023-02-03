@@ -19,7 +19,7 @@ const getFormattedImpact = (widget: Widget) => {
 </script>
 
 <template>
-  <div class="badge" :badge-color="props.widget.selectedColor">
+  <div class="badge" :class="[props.widget.selectedColor]">
     <div class="gs-avatar">
       <GreenSparkIcon class="gs-icon" />
       <p class="gs-text">greenspark</p>
@@ -45,27 +45,27 @@ const getFormattedImpact = (widget: Widget) => {
   transition: background-color 200ms linear, color 200ms linear;
 }
 
-.badge[badge-color="blue"] {
+.badge.blue {
   background-color: var(--color-widget-bg-blue);
   color: var(--color-widget-blue);
 }
 
-.badge[badge-color="green"] {
+.badge.green {
   background-color: var(--color-widget-bg-green);
   color: var(--color-widget-green);
 }
 
-.badge[badge-color="beige"] {
+.badge.beige {
   background-color: var(--color-widget-bg-beige);
   color: var(--color-widget-beige);
 }
 
-.badge[badge-color="white"] {
+.badge.white {
   background-color: var(--color-widget-bg-white);
   color: var(--color-widget-white);
 }
 
-.badge[badge-color="black"] {
+.badge.black {
   background-color: var(--color-widget-bg-black);
   color: var(--color-widget-black);
 }

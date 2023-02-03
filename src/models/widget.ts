@@ -2,7 +2,7 @@ export const ImpactTypes = {
   CARBON: "carbon",
   PLASTIC_BOTTLES: "plastic bottles",
   TREES: "trees",
-};
+} as const;
 
 export const WidgetColors = [
   "blue",
@@ -18,7 +18,7 @@ export type WidgetAction = "collects" | "plants" | "offsets";
 
 export interface Widget {
   id: number;
-  type: keyof typeof ImpactTypes;
+  type: (typeof ImpactTypes)[keyof typeof ImpactTypes];
   amount: number;
   action: WidgetAction;
   active: boolean;

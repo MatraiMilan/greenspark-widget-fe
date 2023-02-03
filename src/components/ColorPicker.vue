@@ -16,7 +16,12 @@ const emit = defineEmits<ColorPickerEmits>();
 
 const colors = ref([...WidgetColors]);
 
-const selectColor = (color: WidgetColorType) => emit("change", color);
+const selectColor = (color: WidgetColorType) => {
+  if (color === props.selectedColor) {
+    return;
+  }
+  emit("change", color);
+};
 </script>
 
 <template>

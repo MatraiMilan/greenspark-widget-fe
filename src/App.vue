@@ -4,9 +4,13 @@ import { useStore } from "vuex";
 import { ACTION } from "@/store/actions";
 import type { State } from "@/models/state";
 import GsLoader from "@/components/GsLoader.vue";
+import { onMounted } from "vue";
 
 const store = useStore<State>();
-store.dispatch(ACTION.LOAD_WIDGETS);
+
+onMounted(() => {
+  store.dispatch(ACTION.LOAD_WIDGETS);
+});
 </script>
 
 <template>

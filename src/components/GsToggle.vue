@@ -1,6 +1,6 @@
 <script setup lang="ts">
 export interface GsToggleProps {
-  selected?: boolean;
+  selected: boolean;
 }
 
 export interface GsToggleEmits {
