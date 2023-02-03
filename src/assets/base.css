@@ -55,6 +55,8 @@
   --color-toggle-bg: var(--gs-white-2);
   --color-toggle-selected-bg: var(--gs-green-1);
   --color-toggle-hover: var(--gs-green-2);
+
+  --color-loader: var(--gs-green-1);
 }
 
 *,

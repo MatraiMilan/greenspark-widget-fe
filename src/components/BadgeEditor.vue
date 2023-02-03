@@ -87,7 +87,7 @@ const onActiveChange = (active: boolean) =>
 
 .info-tooltip {
   position: absolute;
-  top: 30px;
+  top: 38px;
   width: 248px;
   height: 162px;
   left: 50%;
@@ -96,15 +96,12 @@ const onActiveChange = (active: boolean) =>
   visibility: hidden;
   z-index: 1000;
   transform: translateY(-20px);
-  transition: opacity 300ms ease-out, visibility 300ms linear,
-    top 300ms cubic-bezier(0.67, -0.5, 1, 1);
+  transition: opacity 200ms ease-out, visibility 200ms linear;
 }
 
 .info:hover .info-tooltip {
   opacity: 1;
   visibility: visible;
-  top: 40px;
-  transition: opacity 300ms ease-in, top 300ms cubic-bezier(0.67, 1.92, 0.83, 1);
 }
 
 .checkbox-linked {
