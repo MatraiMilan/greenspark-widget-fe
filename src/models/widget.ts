@@ -25,3 +25,7 @@ export interface Widget {
   linked: boolean;
   selectedColor: WidgetColorType;
 }
+
+export type WidgetActiveChangePayload = Pick<Widget, "id" | "active">;
+export type WidgetLinkedChangePayload = Pick<Widget, "id" | "linked">;
+export type WidgetColorChangedPayload = Pick<Widget, "id" | "selectedColor">;

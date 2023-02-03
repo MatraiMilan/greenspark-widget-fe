@@ -1,16 +1,29 @@
 <script setup lang="ts">
-import type { Widget } from "@/models/widget";
+import type { Widget, WidgetColorType } from "@/models/widget";
 import IconInfoOutline from "@/components/icons/IconInfoOutline.vue";
 import PublicProfileInfoCard from "@/components/PublicProfileInfoCard.vue";
 import GsCheckbox from "@/components/GsCheckbox.vue";
 import ColorPicker from "@/components/ColorPicker.vue";
 import GsToggle from "@/components/GsToggle.vue";
+import { useStore } from "vuex";
+import type { State } from "@/models/state";
+import { ACTION } from "@/store/actions";
 
 export interface BadgeEditorProps {
   widget: Widget;
 }
 
+const store = useStore<State>();
 const props = defineProps<BadgeEditorProps>();
+
+const onLinkedChange = (linked: boolean) =>
+  store.dispatch(ACTION.SET_LINKED, { id: props.widget.id, linked });
+
+const onColorChange = (selectedColor: WidgetColorType) =>
+  store.dispatch(ACTION.SET_COLOR, { id: props.widget.id, selectedColor });
+
+const onActiveChange = (active: boolean) =>
+  store.dispatch(ACTION.SET_ACTIVE, { id: props.widget.id, active });
 </script>
 
 <template>
@@ -23,17 +36,24 @@ const props = defineProps<BadgeEditorProps>();
           <PublicProfileInfoCard class="info-tooltip" />
         </span>
       </p>
-      <GsCheckbox :checked="props.widget.linked" class="checkbox-linked" />
+      <GsCheckbox
+        :checked="props.widget.linked"
+        @change="onLinkedChange"
+        class="checkbox-linked"
+      />
     </div>
     <div class="editor-item">
       <div class="editor-item">
         <p>Badge colour</p>
-        <ColorPicker :selectedColor="props.widget.selectedColor" />
+        <ColorPicker
+          :selectedColor="props.widget.selectedColor"
+          @change="onColorChange"
+        />
       </div>
     </div>
     <div class="editor-item">
       <p>Activate badge</p>
-      <GsToggle :selected="props.widget.active" />
+      <GsToggle :selected="props.widget.active" @change="onActiveChange" />
     </div>
   </div>
 </template>

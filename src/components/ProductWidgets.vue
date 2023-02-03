@@ -21,7 +21,7 @@ const store = useStore<State>();
 
 <style scoped>
 .container {
-  width: 851px;
+  min-width: 851px;
   min-height: 419px;
   padding: 36px;
   background-color: var(--color-card-background);
@@ -50,6 +50,7 @@ const store = useStore<State>();
 
 @media (max-width: 870px) {
   .container {
+    min-width: unset;
     width: 331px;
   }
 }

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
 export interface GsToggleProps {
   selected?: boolean;
 }
@@ -12,17 +10,12 @@ export interface GsToggleEmits {
 const props = defineProps<GsToggleProps>();
 const emit = defineEmits<GsToggleEmits>();
 
-const isSelected = ref(props.selected);
-
-const onSelect = () => {
-  isSelected.value = !isSelected.value;
-  emit("change", isSelected.value);
-};
+const onToggle = () => emit("change", !props.selected);
 </script>
 
 <template>
-  <div class="slider-container" :class="{ selected: isSelected }">
-    <div class="slider" @click="onSelect"></div>
+  <div class="slider-container" :class="{ selected: props.selected }">
+    <div class="slider" @click="onToggle"></div>
   </div>
 </template>
 

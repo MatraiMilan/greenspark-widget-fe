@@ -15,12 +15,8 @@ const props = defineProps<ColorPickerProps>();
 const emit = defineEmits<ColorPickerEmits>();
 
 const colors = ref([...WidgetColors]);
-const currentSelectedColor = ref(props.selectedColor);
 
-const selectColor = (color: WidgetColorType) => {
-  currentSelectedColor.value = color;
-  emit("change", color);
-};
+const selectColor = (color: WidgetColorType) => emit("change", color);
 </script>
 
 <template>
@@ -28,7 +24,7 @@ const selectColor = (color: WidgetColorType) => {
     <div
       v-for="color in colors"
       :key="color"
-      :class="[color, currentSelectedColor === color && 'selected', 'color']"
+      :class="[color, props.selectedColor === color && 'selected', 'color']"
       @click="() => selectColor(color)"
     ></div>
   </div>

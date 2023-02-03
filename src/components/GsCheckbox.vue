@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import IconCheckMark from "@/components/icons/IconCheckMark.vue";
-import { ref } from "vue";
 
 export interface CheckboxProps {
   checked?: Boolean;
@@ -13,17 +12,12 @@ export interface CheckboxEmits {
 const props = defineProps<CheckboxProps>();
 const emit = defineEmits<CheckboxEmits>();
 
-const isChecked = ref(props.checked);
-
-const onClick = () => {
-  isChecked.value = !isChecked.value;
-  emit("change", !!isChecked.value);
-};
+const onClick = () => emit("change", !props.checked);
 </script>
 
 <template>
-  <div class="checkbox" :class="{ checked: isChecked }" @click="onClick">
-    <IconCheckMark v-if="isChecked" class="checkmark" />
+  <div class="checkbox" :class="{ checked: props.checked }" @click="onClick">
+    <IconCheckMark v-if="props.checked" class="checkmark" />
   </div>
 </template>
 

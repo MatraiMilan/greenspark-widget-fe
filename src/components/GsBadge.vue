@@ -42,6 +42,7 @@ const getFormattedImpact = (widget: Widget) => {
   border-radius: 6px;
   gap: 12px;
   padding: 10px 12px;
+  transition: background-color 200ms linear, color 200ms linear;
 }
 
 .badge[badge-color="blue"] {

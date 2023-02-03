@@ -19,6 +19,6 @@ const props = defineProps<GsWidgetProps>();
 
 <style scoped>
 .widget {
-  width: 221px;
+  min-width: 221px;
 }
 </style>
