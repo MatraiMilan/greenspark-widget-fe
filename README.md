@@ -1,30 +1,38 @@
-# greenspark-widget-fe
+<p align="center">
+  <a href="https://www.getgreenspark.com/" target="blank">
+    <img src="https://uploads-ssl.webflow.com/611391a1477389e3857d8014/6121384709033a5f2461b91c_favicon-256.png" width="180" alt="Greenspark Logo" />
+    <h2 align="center">Greenspark</h2>
+  </a>
+    <h3 align="center">Powerful climate action made easy</h3>
+    <h5 align="center" style="margin-bottom: 60px">Join a global movement creating positive impact every day.</h5>
+</p>
 
-This template should help get you started developing with Vue 3 in Vite.
+-----
 
-## Recommended IDE Setup
+# [Greenspark Widget Editor (frontend)](https://github.com/MatraiMilan/greenspark-widget-fe)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+-----
+
+### Before you start you need to clone, setup and run the [backend app](https://github.com/MatraiMilan/greenspark-widget-be)!
+
+-----
+
+## Run locally
+
+### Install dependencies
+
 ```sh
 npm install
+```
+
+### Edit [.env file](.env)
+
+```
+VITE_BACKEND_URL=<backend url)> // default: http://localhost:3000
+VITE_PUBLIC_PROFILE_URL=<public profile url> // default: https://www.getgreenspark.com
 ```
 
 ### Compile and Hot-Reload for Development
@@ -33,17 +41,31 @@ npm install
 npm run dev
 ```
 
+### Open [the app](http://localhost:5173) in your browser
+
+-----
+
+## Build
+
 ### Type-Check, Compile and Minify for Production
 
 ```sh
 npm run build
 ```
 
+-----
+
+## Test
+
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
 npm run test:unit
 ```
+
+-----
+
+## Lint
 
 ### Lint with [ESLint](https://eslint.org/)
 
